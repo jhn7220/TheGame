@@ -1,0 +1,20 @@
+{
+  "name": "TheGame",
+  "main": "index.js",
+  "homepage": "https://github.com/jhn7220/TheGame",
+  "authors": [
+    "jhn7220 <jhn7220@ppsbstudent.org>"
+  ],
+  "description": "video game library",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
