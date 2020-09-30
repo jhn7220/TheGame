@@ -16,6 +16,6 @@
   ],
   "dependencies": {
     "lodash": "^4.17.20",
-    "TheGame": "https://github.com/jhn7220/TheGame.get#v0.1.0"
+    "TheGame": "https://github.com/jhn7220/TheGame.git#v0.1.0"
   }
 }

@@ -2,7 +2,19 @@
 
 (function(window, _) {
   window.TheGame = window.TheGame || {
+<<<<<<< HEAD
     numz: {/* other code */},
+=======
+    numz: {/* other code */
+        getDistance(pointA, pointB) {
+            const
+                distanceX = pointB.x - pointA.x,
+                distanceY = pointB.y - pointA.y,
+                distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
+            return distance;
+        },
+    },
+>>>>>>> 9e0a0f4ade16175d4623fa5d482677e61739ea58
     phyz: {
       /**
        * Returns an Object with basic properties utilized in a 
