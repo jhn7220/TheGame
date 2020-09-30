@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "lodash": "^4.17.20"
+    "lodash": "^4.17.20",
+    "TheGame": "https://github.com/jhn7220/TheGame.get#v0.1.0"
   }
 }
