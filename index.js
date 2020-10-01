@@ -2,10 +2,7 @@
 
 (function(window, _) {
   window.TheGame = window.TheGame || {
-<<<<<<< HEAD
-    numz: {/* other code */},
-=======
-    numz: {/* other code */
+    numz: {
         getDistance(pointA, pointB) {
             const
                 distanceX = pointB.x - pointA.x,
@@ -13,8 +10,19 @@
                 distance = Math.sqrt(distanceX * distanceX + distanceY * distanceY);
             return distance;
         },
+        getAngleDegrees(pointA, pointB) {
+                distanceX = pointB.x - pointA.x,
+                distanceY = pointB.y - pointA.y,  
+                radians = Math.atan2(distanceY, distanceX),
+                degrees = radians * 180 / Math.PI;          
+        },
+        degreesToRadians(degrees) {
+            return degrees * Math.PI / 180;
+        },
+        radiansToDegrees(radians) {
+            return radians * 180 / Math.PI;
+        },
     },
->>>>>>> 9e0a0f4ade16175d4623fa5d482677e61739ea58
     phyz: {
       /**
        * Returns an Object with basic properties utilized in a 
