@@ -11,10 +11,12 @@
             return distance;
         },
         getAngleDegrees(pointA, pointB) {
+            const
                 distanceX = pointB.x - pointA.x,
                 distanceY = pointB.y - pointA.y,  
                 radians = Math.atan2(distanceY, distanceX),
-                degrees = radians * 180 / Math.PI;          
+                degrees = radians * 180 / Math.PI; 
+            return degrees;         
         },
         degreesToRadians(degrees) {
             return degrees * Math.PI / 180;
@@ -71,7 +73,44 @@
           handleCollision(impact, body) {
             // template method //
           },
-
+            /**
+             * Updates the diagonal velocity properties of a body,
+             * taking into account the body's current velocity 
+             * and applying any forces acting against the body
+             * as acceleration on both the x and y axis.
+             * 
+             * NOTE: This method DOES NOT update the position of 
+             * the body, it only updates its velocity.
+             * 
+             * @param {Object} body: The body must be an Object 
+             * with velocityX, velocityY and rotation properties. 
+             * @param {Number} forceOnX: The force acting against
+             * the body on the x axis.
+             * @param {Number} forceOnY: The force acting against
+             * the body on the y axis.
+             */
+            updateVelocity(body, forceOnX, forceOnY) {
+            const
+                angle = body.rotation * Math.PI / 180,
+                accelerationOnX  = Math.cos(angle) * forceOnX,
+                accelerationOnY = Math.sin(angle) * forceOnY;
+            body.velocityX += accelerationOnX;
+            body.velocityY += accelerationOnY;
+            },
+            /**
+             * Updates the x and y properties of a body based on its
+             * velocityX and velocityY, and, updates the rotation of
+             * a body based on its rotationalVelocity.
+             *
+             * @param {Object} body: The body must be an Object 
+             * with x, y, rotation, velocityX, velocityY, and 
+             * rotationalVelocity properties.
+             */
+            updatePosition(body) {
+            body.x += body.velocityX;
+            body.y += body.velocityY;
+            body.rotation += body.rotationalVelocity;
+            },
           /**
            * Can be overridden in the concrete body to provide a custom update()
            * method.
